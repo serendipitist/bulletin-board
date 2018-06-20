@@ -9,7 +9,8 @@ class Board extends Component {
       notes: [
         {
         id: 0,
-        note: "Call Ana"},
+        note: "Call Ana"
+        },
         {
           id:1,
           note: "Call Florist"
@@ -35,10 +36,13 @@ class Board extends Component {
      }]
    }))
   }
-
   update(newText, i) {
-    this.setState(prevState => ({ notes: prevState.notes.map(note =>( note.id === i) ? note: {...note, note: newText})
-    }))
+		console.log('updating item at index', i, newText)
+		this.setState(prevState => ({
+			notes: prevState.notes.map(
+				note => (note.id !== i) ? note : {...note, note: newText}
+			)
+		}))
   }
 
   nextId() {
