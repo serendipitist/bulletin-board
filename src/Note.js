@@ -18,13 +18,12 @@ class Note extends Component {
   }
 
   edit() {
-		this.setState(prevState =>({
-      editing: !prevState.editing
-		}));
+		this.setState({
+      editing: true
+		});
 	}
 
 	remove(id) {
-    console.log('removing an item id',id);
 		this.props.onRemove(this.props.index)
 	}
 
@@ -41,7 +40,7 @@ class Note extends Component {
       <div className="note">
         <form onSubmit={this.save}>
           <textarea ref={input=> this._newText = input} />
-          <button id="save"><FaFloppy0 /></button>
+          <button type="submit" id="save"><FaFloppy0 /></button>
         </form>
       </div>
     )
