@@ -36,6 +36,7 @@ class Board extends Component {
      }]
    }))
   }
+
   update(newText, i) {
 		console.log('updating item at index', i, newText)
 		this.setState(prevState => ({
