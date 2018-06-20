@@ -29,11 +29,11 @@ class Note extends Component {
 	}
 
 	save(e) {
-    e.preventDefault()
     this.props.onChange(this._newText.value, this.props.index)
     this.setState({
       editing: false
     })
+    e.preventDefault();
 	}
 
   renderForm() {
